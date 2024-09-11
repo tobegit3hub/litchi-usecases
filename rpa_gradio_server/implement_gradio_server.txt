@@ -1,0 +1,24 @@
+实现一个Gradio应用，用于接收用户输入，然后通过Python调用后端服务。
+
+Gradio网站介绍为“RPA Assitant”。
+
+左侧为用户输入，右侧为返回结果。
+
+第一个输入框为textare，名称是“自然语言输入”。第二个输入框为下拉列表，名称是“生成阶段”，可选输入为["拆解流程", "拆解步骤", "生成组件", "生成XML"]。第三个输入为textarea，名称为”流程列表“。第四个输入为textarea，名称为”步骤列表“。第四个输入为textarea，名称为”组件列表“。点击“提交”按钮后，调用后端服务，返回结果。返回结果为一个textarea，名称为”当前阶段结果“。
+
+调用后端服务使用Python request库，请求参数参考下面的curl命令。
+
+```
+curl -X POST 'http://ai-dify-api.sit.sf-express.com/v1/chat-messages' \
+--header 'Authorization: Bearer app-3BombSIZXh3SeE7DQQDLdE2f' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "query": "合并2023年和2024年的《地区月度销售数据》，剔除《地区月度销售数据》和《网点明细销售数据》的港澳台数据，然后写入模 板，刷新透视表和公式，生成报表和看板图片。",
+    "inputs": {
+        "stage": "拆解流程"
+    },
+    "response_mode": "streaming",
+    "conversation_id": "",
+    "user": "123456"
+}'
+```

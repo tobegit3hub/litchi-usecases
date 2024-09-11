@@ -1,0 +1,4 @@
+/Users/tobe/miniconda3/envs/idphoto/lib/python3.10/site-packages/gradio_client/documentation.py:106: UserWarning: Could not get documentation group for <class 'gradio.mix.Parallel'>: No known documentation group for module 'gradio.mix'
+  warnings.warn(f"Could not get documentation group for {cls}: {exc}")
+/Users/tobe/miniconda3/envs/idphoto/lib/python3.10/site-packages/gradio_client/documentation.py:106: UserWarning: Could not get documentation group for <class 'gradio.mix.Series'>: No known documentation group for module 'gradio.mix'
+  warnings.warn(f"Could not get documentation group for {cls}: {exc}")
